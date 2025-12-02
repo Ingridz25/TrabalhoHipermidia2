@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Glambox - Gestão de Maquiagem</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Glambox Admin</h1>
+        </header>
+
+        <main>
+            <section id="cadastro">
+                <h2>Novo produto</h2>
+                
+                <form action="/make" method="POST">
+
+                    <label for="produto">Nome do Produto: </label>
+                    <input type="text" id="produto" name="produto" required placeholder="Ex: Batom Matte">
+                    <br><br>
+
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+                    <br><br>
+
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo">
+                        <option value="batom">Batom</option>
+                        <option value="base">Base</option>
+                        <option value="sombra">Sombra</option>
+                        <option value="delineador">Delineador</option>
+                        <option value="outro">Outros</option>
+                    </select>
+                    <br><br>
+                    
+                    <label for="preco">Preço (R$):</label>
+                    <input type="number" id="preco" name="preco" min="0" step="0.01" required>
+
+                    <label for="estoque">Estoque:</label>
+                    <input type="number" id="estoque" name="estoque" min="0" required>
+                    <br><br>
+
+                    <label for="tom">Tom/Cor:</label>
+                    <input type="text" id="tom" name="tom" placeholder="Ex: Vermelho Rubi">
+                    <br><br>
+
+                    <label for="rating">Rating (0 a 5):</label>
+                    <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" placeholder="4.5">
+
+                    <button type="submit">Cadastrar Produto</button>
+                </form>
+            </section>
+           <section id="vitrine">
+                <h2>Catálogo de Produtos</h2>
+
+                    <div class="filtros-bar">
+                        <input type="text" id="filtro-marca" placeholder="Buscar por marca...">
+                    
+                    <select id="filtro-tipo">
+                        <option value="">Todos os Tipos</option>
+                        <option value="batom">Batom</option>
+                        <option value="base">Base</option>
+                        <option value="sombra">Sombra</option>
+                    </select>
+
+                    <select id="ordenacao">
+                        <option value="rating">Melhores Avaliados</option>
+                        <option value="menor-preco">Menor Preço</option>
+                        <option value="maior-preco">Maior Preço</option>
+                    </select>
+
+                    <button id="btn-filtrar">Filtrar</button>
+                </div>
+
+                <div class="grade-produtos">
+                    
+                    <div class="card"> 
+                        
+                        <div class="card-header">
+                            <span class="tag">Batom</span>
+                            <span class="rating">★ 4.6</span>
+                        </div>
+                        
+                        <h3>Batom Matte Velvet</h3>
+                        <p class="marca">Marca: GlamX</p>
+
+                        <div class="card-footer">
+                            <p class="estoque">Estoque: 120</p>
+                            <p class="preco">R$ 59,90</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+                    </div> 
+                </div> 
+            </section>
+        </main>
+    </body>
+<html>
